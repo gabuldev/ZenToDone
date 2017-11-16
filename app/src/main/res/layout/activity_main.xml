@@ -11,11 +11,11 @@
         android:id="@+id/toolbar_main_1" />
 
     <android.support.v4.view.ViewPager
+        android:id="@+id/costomViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar_main_1"
-        android:id="@+id/costomViewPager"
-        >
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/costomTabLayout">
 
     </android.support.v4.view.ViewPager>
 
