@@ -12,20 +12,17 @@ import example.learning.kotlin.gabriel.zendone.R
 import example.learning.kotlin.gabriel.zendone.adapters.AdapterCardView
 
 
+
 /**
  * A simple [Fragment] subclass.
  */
 class TodayFragment : Fragment() {
 
-
+    var listcardview : ArrayList<CardInfo>? = ArrayList<CardInfo>()
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var listcardview : ArrayList<CardInfo>? = ArrayList<CardInfo>()
         var mAdapter : AdapterCardView? = null
-
-
-
 
         listcardview?.add(CardInfo("Algebra","Fazer a atividade numero 1",true))
         listcardview?.add(CardInfo("Matematica","Fazer a prova",false))
@@ -34,7 +31,6 @@ class TodayFragment : Fragment() {
         listcardview?.add(CardInfo("Fisica 1","Fazer a atividade numero 6",false))
         listcardview?.add(CardInfo("Bispo","Fazer o mousse",false))
         listcardview?.add(CardInfo("Carro","Lavar o carro today",true))
-
 
         //CRIANDO O RECYCLER VIEW E MANDANDO PARA O ADAPTER
 
@@ -54,9 +50,13 @@ class TodayFragment : Fragment() {
 
         var rootView = inflater!!.inflate(R.layout.fragmet_today,container,false)
 
+
         // Inflate the layout for this fragment
         return rootView
     }
 
+    init {
+
+    }
 }// Required empty public constructor
 

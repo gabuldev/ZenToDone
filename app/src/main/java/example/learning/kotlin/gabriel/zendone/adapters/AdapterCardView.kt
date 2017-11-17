@@ -51,8 +51,6 @@ class AdapterCardView(val context: Context, private val mNotificationListModelAr
             true
         }
 
-
-
     }
 
     override fun getItemCount(): Int {
@@ -87,14 +85,10 @@ class AdapterCardView(val context: Context, private val mNotificationListModelAr
 
         var tvTitle: TextView
         var tvDes: TextView
-        var tvDate: TextView
-        var tvTime: TextView
 
         init {
             tvTitle = itemView.findViewById<TextView>(R.id.tvTitle) as TextView
             tvDes = itemView.findViewById<TextView>(R.id.tvDes) as TextView
-            tvDate = itemView.findViewById<TextView>(R.id.tvDate) as TextView
-            tvTime = itemView.findViewById<TextView>(R.id.tvTime) as TextView
         }
     }
 }
