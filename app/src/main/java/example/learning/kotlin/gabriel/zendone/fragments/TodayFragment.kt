@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.orhanobut.hawk.Hawk
 import example.learning.kotlin.gabriel.zendone.CardInfo
 import example.learning.kotlin.gabriel.zendone.R
 import example.learning.kotlin.gabriel.zendone.adapters.AdapterCardView
@@ -24,13 +25,15 @@ class TodayFragment : Fragment() {
 
         var mAdapter : AdapterCardView? = null
 
-        listcardview?.add(CardInfo("Algebra","Fazer a atividade numero 1",true))
+       listcardview?.add(CardInfo("Algebra","Fazer a atividade numero 1",true))
         listcardview?.add(CardInfo("Matematica","Fazer a prova",false))
         listcardview?.add(CardInfo("Calculo I","Fazer a atividade numero 4",false))
         listcardview?.add(CardInfo("Calculo 2","Fazer a atividade numero 5",false))
         listcardview?.add(CardInfo("Fisica 1","Fazer a atividade numero 6",false))
         listcardview?.add(CardInfo("Bispo","Fazer o mousse",false))
         listcardview?.add(CardInfo("Carro","Lavar o carro today",true))
+
+
 
         //CRIANDO O RECYCLER VIEW E MANDANDO PARA O ADAPTER
 
