@@ -35,13 +35,7 @@ class TodayFragment : Fragment() {
 
         var mAdapter : AdapterCardView? = null
 
-       listcardview?.add(CardInfo("Algebra","Fazer a atividade numero 1",true))
-        listcardview?.add(CardInfo("Matematica","Fazer a prova",false))
-        listcardview?.add(CardInfo("Calculo I","Fazer a atividade numero 4",false))
-        listcardview?.add(CardInfo("Calculo 2","Fazer a atividade numero 5",false))
-        listcardview?.add(CardInfo("Fisica 1","Fazer a atividade numero 6",false))
-        listcardview?.add(CardInfo("Bispo","Fazer o mousse",false))
-        listcardview?.add(CardInfo("Carro","Lavar o carro today",true))
+
 
 
 
@@ -67,10 +61,13 @@ class TodayFragment : Fragment() {
                 val priority = newtaskView.findViewById<RadioButton>(R.id.btnFav)
 
                 alert.setView(newtaskView)
-                alert.setTitle("CREATED CARD")
+                alert.setTitle("Nova Tarefa")
                 alert.setPositiveButton("OK",DialogInterface.OnClickListener { dialog, which ->
                     Toast.makeText(activity,"Card criado!",Toast.LENGTH_SHORT).show()
                     mAdapter!!.addItem(CardInfo(titulo.text.toString(),desc.text.toString(),btnFav.isChecked)) })
+
+
+
                 alert.setNegativeButton("CANCEL",DialogInterface.OnClickListener { dialog, which -> })
                 alert.show()
 
