@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ZenDone.iml" filepath="$PROJECT_DIR$/ZenDone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZenToDone.iml" filepath="$PROJECT_DIR$/ZenToDone.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
