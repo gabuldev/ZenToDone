@@ -1,8 +1,12 @@
 package example.learning.kotlin.gabriel.zendone.adapters
 
+import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import android.widget.Toast
+import example.learning.kotlin.gabriel.zendone.R
+import kotlinx.android.synthetic.main.fragmet_today.view.*
 
 
 /**
@@ -17,6 +21,15 @@ class AdapterPager(fm: FragmentManager): FragmentPagerAdapter(fm) {
 
     //we need to create function to add fragments
 
+    override fun getItemPosition(`object`: Any?): Int {
+        var click = mFm.findFragmentById(R.id.frametoday)
+        var fab = click.activity.findViewById<FloatingActionButton>(R.id.floatingActionButton)
+        fab.setOnClickListener {
+            Toast.makeText(click.activity,"OI",Toast.LENGTH_SHORT)
+        }
+
+        return super.getItemPosition(`object`)
+    }
     fun addFragments(fragmentItem: Fragment, fragmentTitle:String){
         mFragmentItems.add(fragmentItem)
         mFragmentTitles.add(fragmentTitle)

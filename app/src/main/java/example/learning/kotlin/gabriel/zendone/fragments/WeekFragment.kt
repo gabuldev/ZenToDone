@@ -11,7 +11,7 @@ import example.learning.kotlin.gabriel.zendone.R
 /**
  * A simple [Fragment] subclass.
  */
-class WeekFragment : Fragment() {
+class WeekFragment  : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,

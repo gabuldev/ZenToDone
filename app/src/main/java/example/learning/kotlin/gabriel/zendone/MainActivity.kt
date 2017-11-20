@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar_main)
 
         initViewPager()//CRIA OS TABS
-        fuctionFAB()//RELACIONADA COM O FAB
+
 
 
 
@@ -51,35 +51,6 @@ class MainActivity : AppCompatActivity() {
         Hawk.init(this).build()
     }
 
-    fun fuctionFAB(){
-        //USADO PARA CRIAR A FUNÇÃO DO FAB
-        fab.setOnClickListener {
-            /*val intent = Intent(this,CardCreatActivity(listcardview)::class.java)
-            startActivity(intent)*/
-            val alert = AlertDialog.Builder(this)
-            val newtaskView = this.layoutInflater.inflate(R.layout.card_view_created, null, true)
 
-            //PEGANDO OS COMANDOS CRIAR E CANCELAR
-            val titulo = newtaskView.findViewById<EditText>(R.id.edittitle)
-            val desc = newtaskView.findViewById<EditText>(R.id.editdescription)
-
-            alert.setView(newtaskView)
-            alert.setTitle("CREATED CARD")
-            alert.setPositiveButton("OK",DialogInterface.OnClickListener { dialog, which ->
-                Toast.makeText(this,"Card criado!",Toast.LENGTH_SHORT).show()})
-            alert.setNegativeButton("CANCEL",DialogInterface.OnClickListener { dialog, which ->
-                listcard?.add(CardInfo(titulo.text.toString(),desc.text.toString(),false))
-                Hawk.put("bd",listcard)
-            })
-            alert.show()
-
-        }
-
-
-        fab.setOnLongClickListener {
-            Toast.makeText(this, "CREADO LONG", Toast.LENGTH_SHORT).show()
-            true
-        }
-    }
 
 }
