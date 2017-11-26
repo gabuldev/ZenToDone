@@ -3,7 +3,6 @@ package example.learning.kotlin.gabriel.zendone
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.orhanobut.hawk.Hawk
-import example.learning.kotlin.gabriel.zendone.R.id.toolbar_main
 import example.learning.kotlin.gabriel.zendone.adapters.AdapterPager
 import example.learning.kotlin.gabriel.zendone.fragments.TodayFragment
 import example.learning.kotlin.gabriel.zendone.fragments.OrganizationFragment
@@ -16,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar_main)
+        setSupportActionBar(toolbar)
 
         initViewPager()//CRIA OS TABS
     }
@@ -27,9 +26,10 @@ class MainActivity : AppCompatActivity() {
         var pageAdapter : AdapterPager? = null
         //CARREGANDO O TAB LAYOUT
         pageAdapter = AdapterPager(supportFragmentManager)
-        pageAdapter.addFragments(TodayFragment(), "Dia")
 
         pageAdapter.addFragments(OrganizationFragment(),"Organizar")
+
+        pageAdapter.addFragments(TodayFragment(), "Dia")
 
         //ADICIONANDO O PAGEADAPTER PARA O VIEWPAGER
         costomViewPager.adapter = pageAdapter
