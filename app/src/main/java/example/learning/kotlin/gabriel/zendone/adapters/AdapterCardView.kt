@@ -33,8 +33,8 @@ class AdapterCardView(val context: Context, private val mNotificationListModelAr
         if (mNotificationListModelArrayList != null) {
             holder.tvTitle.text = mNotificationListModelArrayList.get(position).title
             holder.tvDes.text = mNotificationListModelArrayList.get(position).description
-            var fav = holder.itemView.findViewById<Switch>(R.id.favsw)
-            fav.isChecked
+            holder.swFav.isChecked = mNotificationListModelArrayList.get(position).priorite
+
         }
 
         //FUNÇOES REFERENT A CLICK NO CARD
@@ -88,11 +88,15 @@ class AdapterCardView(val context: Context, private val mNotificationListModelAr
 
         var tvTitle: TextView
         var tvDes: TextView
+        var swFav: Switch
+
 
 
         init {
             tvTitle = itemView.findViewById<TextView>(R.id.tvTitle) as TextView
             tvDes = itemView.findViewById<TextView>(R.id.tvDes) as TextView
+            swFav = itemView.findViewById<Switch>(R.id.favsw) as Switch
+
 
         }
     }

@@ -20,8 +20,8 @@
         android:inputType="textPersonName"
         android:hint="Description" />
 
-    <RadioButton
-        android:id="@+id/btnFav"
+    <Switch
+        android:id="@+id/favsw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Favorito" />

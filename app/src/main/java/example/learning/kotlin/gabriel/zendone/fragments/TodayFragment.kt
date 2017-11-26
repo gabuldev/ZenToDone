@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.Switch
 import android.widget.Toast
 import example.learning.kotlin.gabriel.zendone.CardInfo
 import example.learning.kotlin.gabriel.zendone.R
@@ -40,7 +41,7 @@ class TodayFragment : Fragment() {
         mRecyclerview?.layoutManager = LinearLayoutManager(activity)
         mAdapter = AdapterCardView(activity,listcardview)
         mRecyclerview?.adapter = mAdapter
-        var favreturn : Boolean = false
+
 
             //USADO PARA CRIAR A FUNÇÃO DO FAB
             floatingActionButton.setOnClickListener {
@@ -52,21 +53,17 @@ class TodayFragment : Fragment() {
                 //PEGANDO OS COMANDOS CRIAR E CANCELAR
                 val titulo = newtaskView.findViewById<EditText>(R.id.edittitle)
                 val desc = newtaskView.findViewById<EditText>(R.id.editdescription)
-                val priority = newtaskView.findViewById<RadioButton>(R.id.btnFav)
+                val priority = newtaskView.findViewById<Switch>(R.id.favsw)
+
 
                 alert.setView(newtaskView)
                 alert.setTitle("Nova Tarefa")
                 alert.setPositiveButton("OK",DialogInterface.OnClickListener { dialog, which ->
                     Toast.makeText(activity,"Card criado!",Toast.LENGTH_SHORT).show()
                     
-                    priority.setOnCheckedChangeListener { buttonView, isChecked ->
 
-                        if(isChecked){
-                            favreturn = true
-                        }
-                    }
 
-                    mAdapter!!.addItem(CardInfo(titulo.text.toString(),desc.text.toString(),favreturn)) })
+                    mAdapter!!.addItem(CardInfo(titulo.text.toString(),desc.text.toString(),priority.isChecked)) })
 
 
 
