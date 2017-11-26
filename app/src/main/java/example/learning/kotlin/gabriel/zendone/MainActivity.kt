@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.orhanobut.hawk.Hawk
 import example.learning.kotlin.gabriel.zendone.R.id.toolbar_main
 import example.learning.kotlin.gabriel.zendone.adapters.AdapterPager
+import example.learning.kotlin.gabriel.zendone.fragments.OrganizationFragment
 import example.learning.kotlin.gabriel.zendone.fragments.TodayFragment
 import example.learning.kotlin.gabriel.zendone.fragments.WeekFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         //CARREGANDO O TAB LAYOUT
         pageAdapter = AdapterPager(supportFragmentManager)
         pageAdapter!!.addFragments(TodayFragment(), "Today")
-
+        pageAdapter!!.addFragments(OrganizationFragment(),"Organization")
         pageAdapter!!.addFragments(WeekFragment(),"Week")
 
         //ADICIONANDO O PAGEADAPTER PARA O VIEWPAGER

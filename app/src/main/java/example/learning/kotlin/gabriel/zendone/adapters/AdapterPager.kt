@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.widget.Toast
 import example.learning.kotlin.gabriel.zendone.R
-import kotlinx.android.synthetic.main.fragmet_today.view.*
 
 
 /**
