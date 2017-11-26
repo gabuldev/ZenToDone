@@ -55,8 +55,6 @@ class Control(context: Context) {
                 val discString = TvDes.text.toString()
                 resultado = crud.insereDado(tituloString, discString).toLong()
             }
-
         }
     }
-
 }
