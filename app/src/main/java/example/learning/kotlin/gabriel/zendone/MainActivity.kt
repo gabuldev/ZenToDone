@@ -25,10 +25,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar_main)
 
         initViewPager()//CRIA OS TABS
-
-
-
-
     }
 
     private fun setSupportActionBar(toolbar_main: Int) {}
@@ -37,9 +33,9 @@ class MainActivity : AppCompatActivity() {
         var pageAdapter : AdapterPager? = null
         //CARREGANDO O TAB LAYOUT
         pageAdapter = AdapterPager(supportFragmentManager)
-        pageAdapter!!.addFragments(TodayFragment(), "Today")
+        pageAdapter.addFragments(TodayFragment(), "Today")
 
-        pageAdapter!!.addFragments(WeekFragment(),"Week")
+        pageAdapter.addFragments(WeekFragment(),"Week")
 
         //ADICIONANDO O PAGEADAPTER PARA O VIEWPAGER
         costomViewPager.adapter = pageAdapter
