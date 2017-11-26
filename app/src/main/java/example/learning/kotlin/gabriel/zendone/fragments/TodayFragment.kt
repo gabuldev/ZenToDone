@@ -1,26 +1,20 @@
 package example.learning.kotlin.gabriel.zendone.fragments
 
 import android.content.DialogInterface
-import android.os.Binder
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.Toast
-import com.orhanobut.hawk.Hawk
 import example.learning.kotlin.gabriel.zendone.CardInfo
 import example.learning.kotlin.gabriel.zendone.R
 import example.learning.kotlin.gabriel.zendone.adapters.AdapterCardView
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.card_view_created.*
 import kotlinx.android.synthetic.main.fragmet_today.*
 
 
@@ -46,7 +40,7 @@ class TodayFragment : Fragment() {
         mRecyclerview?.layoutManager = LinearLayoutManager(activity)
         mAdapter = AdapterCardView(activity,listcardview)
         mRecyclerview?.adapter = mAdapter
-
+        var favreturn : Boolean = false
 
             //USADO PARA CRIAR A FUNÇÃO DO FAB
             floatingActionButton.setOnClickListener {
@@ -64,7 +58,15 @@ class TodayFragment : Fragment() {
                 alert.setTitle("Nova Tarefa")
                 alert.setPositiveButton("OK",DialogInterface.OnClickListener { dialog, which ->
                     Toast.makeText(activity,"Card criado!",Toast.LENGTH_SHORT).show()
-                    mAdapter!!.addItem(CardInfo(titulo.text.toString(),desc.text.toString(),btnFav.isChecked)) })
+                    
+                    priority.setOnCheckedChangeListener { buttonView, isChecked ->
+
+                        if(isChecked){
+                            favreturn = true
+                        }
+                    }
+
+                    mAdapter!!.addItem(CardInfo(titulo.text.toString(),desc.text.toString(),favreturn)) })
 
 
 

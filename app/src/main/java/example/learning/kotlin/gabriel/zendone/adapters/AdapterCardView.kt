@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
+import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import example.learning.kotlin.gabriel.zendone.CardInfo
@@ -33,7 +33,8 @@ class AdapterCardView(val context: Context, private val mNotificationListModelAr
         if (mNotificationListModelArrayList != null) {
             holder.tvTitle.text = mNotificationListModelArrayList.get(position).title
             holder.tvDes.text = mNotificationListModelArrayList.get(position).description
-
+            var fav = holder.itemView.findViewById<Switch>(R.id.favsw)
+            fav.isChecked
         }
 
         //FUNÇOES REFERENT A CLICK NO CARD
