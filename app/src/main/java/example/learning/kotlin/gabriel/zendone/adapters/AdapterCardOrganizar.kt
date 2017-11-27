@@ -84,6 +84,7 @@ class AdapterCardOrganizar(val context: Context, private val mNotificationListMo
             var titulo = inflater.findViewById<EditText>(R.id.edittitle)
             var desc = inflater.findViewById<EditText>(R.id.editdescription)
             var swfav = inflater.findViewById<Switch>(R.id.favsw)
+
             titulo.setText(mNotificationListModelArrayList!!.get(position).title)
             desc.setText(mNotificationListModelArrayList!!.get(position).description)
             swfav.setChecked(mNotificationListModelArrayList!!.get(position).priorite)
@@ -136,6 +137,7 @@ class AdapterCardOrganizar(val context: Context, private val mNotificationListMo
             notifyItemInserted(mNotificationListModelArrayList.size)
         }
         notifyDataSetChanged()
+        Hawk.put("card",mNotificationListModelArrayList)
     }
 
     fun addItem(title: String, description: String, fav: Boolean) {

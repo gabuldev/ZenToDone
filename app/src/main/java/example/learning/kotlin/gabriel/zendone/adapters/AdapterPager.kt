@@ -1,10 +1,8 @@
 package example.learning.kotlin.gabriel.zendone.adapters
 
-import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import android.widget.Toast
 import example.learning.kotlin.gabriel.zendone.R
 
 

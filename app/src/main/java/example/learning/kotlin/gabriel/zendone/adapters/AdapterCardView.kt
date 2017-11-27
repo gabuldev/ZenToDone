@@ -8,13 +8,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.Switch
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import example.learning.kotlin.gabriel.zendone.CardInfo
 import example.learning.kotlin.gabriel.zendone.R
-import java.util.*
+import kotlin.collections.ArrayList
 
 
 class AdapterCardView(val context: Context, private val mNotificationListModelArrayList: ArrayList<CardInfo>?) : RecyclerView.Adapter<AdapterCardView.ViewHolder>() {
