@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Switch
 import android.widget.Toast
@@ -45,6 +44,8 @@ class OrganizationFragment : Fragment() {
             val alert = AlertDialog.Builder(activity)
             val newtaskView = this.layoutInflater.inflate(R.layout.card_view_created, null, true)
 
+            var view: View = View(context)
+
             //PEGANDO OS COMANDOS CRIAR E CANCELAR
             val titulo = newtaskView.findViewById<EditText>(R.id.edittitle)
             val desc = newtaskView.findViewById<EditText>(R.id.editdescription)
@@ -61,6 +62,7 @@ class OrganizationFragment : Fragment() {
             alert.setNegativeButton("CANCEL", DialogInterface.OnClickListener { dialog, which -> })
             alert.show()
 
+
             floatingActionButton.setOnLongClickListener {
                 Toast.makeText(activity, "CREADO LONG", Toast.LENGTH_SHORT).show()
                 true
@@ -69,15 +71,11 @@ class OrganizationFragment : Fragment() {
 
     }
 
-
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var rootView = inflater!!.inflate(R.layout.fragmet_today,container,false)
         // Inflate the layout for this fragment
         return rootView
     }
-
-
-
 
     init {}
 }// Required empty public constructor
