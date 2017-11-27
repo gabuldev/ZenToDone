@@ -9,46 +9,32 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Switch
 import android.widget.Toast
 import example.learning.kotlin.gabriel.zendone.CardInfo
 import example.learning.kotlin.gabriel.zendone.R
-import example.learning.kotlin.gabriel.zendone.adapters.AdapterCardView
+import example.learning.kotlin.gabriel.zendone.adapters.AdapterCardOrganizar
 import kotlinx.android.synthetic.main.fragmet_today.*
-
 
 /**
  * A simple [Fragment] subclass.
  */
-//class OrganizationFragment : Fragment() {
-//
-//    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-//                              savedInstanceState: Bundle?): View? {
-//        // Inflate the layout for this fragment
-//        return inflater!!.inflate(R.layout.fragment_week, container, false)
-//    }
-//
-//}// Required empty public constructor
-
 class OrganizationFragment : Fragment() {
 
     var listcardview : ArrayList<CardInfo>? = ArrayList<CardInfo>()
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var mAdapter : AdapterCardView? = null
-
-
-
-
+        var mAdapter : AdapterCardOrganizar? = null
 
         //CRIANDO O RECYCLER VIEW E MANDANDO PARA O ADAPTER
 
         var mRecyclerview = view?.findViewById<RecyclerView>(R.id.recyclerView)
         mRecyclerview?.setHasFixedSize(true)
         mRecyclerview?.layoutManager = LinearLayoutManager(activity)
-        mAdapter = AdapterCardView(activity,listcardview)
+        mAdapter = AdapterCardOrganizar(activity,listcardview)
         mRecyclerview?.adapter = mAdapter
 
 
@@ -70,17 +56,10 @@ class OrganizationFragment : Fragment() {
             alert.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
                 Toast.makeText(activity,"Card criado!", Toast.LENGTH_SHORT).show()
 
-
-
                 mAdapter!!.addItem(CardInfo(titulo.text.toString(),desc.text.toString(),priority.isChecked)) })
-
-
 
             alert.setNegativeButton("CANCEL", DialogInterface.OnClickListener { dialog, which -> })
             alert.show()
-
-
-
 
             floatingActionButton.setOnLongClickListener {
                 Toast.makeText(activity, "CREADO LONG", Toast.LENGTH_SHORT).show()
@@ -91,19 +70,15 @@ class OrganizationFragment : Fragment() {
     }
 
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var rootView = inflater!!.inflate(R.layout.fragmet_today,container,false)
-
-
         // Inflate the layout for this fragment
         return rootView
     }
 
 
-    init {
 
-    }
+
+    init {}
 }// Required empty public constructor
 
