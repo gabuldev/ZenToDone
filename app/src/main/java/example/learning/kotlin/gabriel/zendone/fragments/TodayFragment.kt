@@ -1,17 +1,14 @@
 package example.learning.kotlin.gabriel.zendone.fragments
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.Switch
 import android.widget.Toast
+import com.orhanobut.hawk.Hawk
 import example.learning.kotlin.gabriel.zendone.CardInfo
 import example.learning.kotlin.gabriel.zendone.R
 import example.learning.kotlin.gabriel.zendone.adapters.AdapterCardView
@@ -28,18 +25,18 @@ class TodayFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var mAdapter: AdapterCardView? = null
-
+        //var test = Hawk.get<ArrayList<CardInfo>>("ca")
 
         //CRIANDO O RECYCLER VIEW E MANDANDO PARA O ADAPTER
-
+        listcardview = Hawk.get("card")
         var mRecyclerview = view?.findViewById<RecyclerView>(R.id.recyclerView)
         mRecyclerview?.setHasFixedSize(true)
         mRecyclerview?.layoutManager = LinearLayoutManager(activity)
-        mAdapter = AdapterCardView(activity, listcardview)
+        mAdapter = AdapterCardView(activity,listcardview)
         mRecyclerview?.adapter = mAdapter
 
-
         floatingActionButton.hide()
+
 //        //USADO PARA CRIAR A FUNÇÃO DO FAB
 //        floatingActionButton.setOnClickListener {
 //            /*val intent = Intent(this,CardCreatActivity(listcardview)::class.java)

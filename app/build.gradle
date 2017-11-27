@@ -40,4 +40,6 @@ dependencies {
     compile fileTree(dir: 'libs', includes: ['*.jar'])
     compile 'com.github.dekoservidoni:omfm:1.0.1'
     compile 'com.orhanobut:hawk:2.0.1'
+    compile 'com.huxq17.android:SwipeCardsView:1.3.4'
+
 }

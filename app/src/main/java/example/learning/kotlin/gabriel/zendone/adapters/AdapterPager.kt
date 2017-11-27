@@ -22,10 +22,7 @@ class AdapterPager(fm: FragmentManager): FragmentPagerAdapter(fm) {
 
     override fun getItemPosition(`object`: Any?): Int {
         var click = mFm.findFragmentById(R.id.frametoday)
-        var fab = click.activity.findViewById<FloatingActionButton>(R.id.floatingActionButton)
-        fab.setOnClickListener {
-            Toast.makeText(click.activity,"OI",Toast.LENGTH_SHORT)
-        }
+
 
         return super.getItemPosition(`object`)
     }

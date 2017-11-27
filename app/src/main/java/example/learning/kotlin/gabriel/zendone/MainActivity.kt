@@ -1,20 +1,14 @@
 package example.learning.kotlin.gabriel.zendone
 
-import android.content.Context
-import android.content.DialogInterface
+
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
-import android.widget.EditText
 import android.widget.Toast
 import com.orhanobut.hawk.Hawk
-import example.learning.kotlin.gabriel.zendone.R.id.toolbar_main
 import example.learning.kotlin.gabriel.zendone.adapters.AdapterPager
 import example.learning.kotlin.gabriel.zendone.fragments.OrganizationFragment
 import example.learning.kotlin.gabriel.zendone.fragments.TodayFragment
-import example.learning.kotlin.gabriel.zendone.fragments.WeekFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.FileOutputStream
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,10 +17,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar_main)
+        setSupportActionBar(toolbar)
 
         initViewPager()//CRIA OS TABS
-
 
 
 
@@ -40,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         pageAdapter = AdapterPager(supportFragmentManager)
         pageAdapter!!.addFragments(TodayFragment(), "Today")
         pageAdapter!!.addFragments(OrganizationFragment(),"Organization")
-        pageAdapter!!.addFragments(WeekFragment(),"Week")
 
         //ADICIONANDO O PAGEADAPTER PARA O VIEWPAGER
         costomViewPager.adapter = pageAdapter
@@ -50,6 +42,9 @@ class MainActivity : AppCompatActivity() {
 
         //CARREAGANDO A HAWK
         Hawk.init(this).build()
+        listcard?.add(CardInfo("oi","opa",true))
+
+
     }
 
 
