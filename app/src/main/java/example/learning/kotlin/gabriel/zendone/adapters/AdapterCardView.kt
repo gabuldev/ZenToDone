@@ -45,14 +45,14 @@ class AdapterCardView(val context: Context, private val mNotificationListModelAr
 
         holder.itemView.setOnClickListener {
 
-            var alertEdit = AlertDialog.Builder(context)
+            var alertEdit = AlertDialog.Builder(this.context)
             alertEdit.setView(R.layout.card_view_edited)
 
 
             //TEM QUE VERIFICAR SE TA INDO
-            val titulo = holder.itemView.findViewById<EditText>(R.id.edittitle)
-            val desc = holder.itemView.findViewById<EditText>(R.id.editdescription)
-            val priority = holder.itemView.findViewById<Switch>(R.id.favsw)
+            var titulo = holder.itemView.findViewById<EditText>(R.id.edittitle)
+            var desc = holder.itemView.findViewById<EditText>(R.id.editdescription)
+            var priority = holder.itemView.findViewById<Switch>(R.id.favsw)
 
 
 

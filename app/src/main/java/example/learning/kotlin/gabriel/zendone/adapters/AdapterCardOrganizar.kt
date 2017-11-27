@@ -21,10 +21,10 @@ class AdapterCardOrganizar(val context: Context, private val mNotificationListMo
 
     var cardinfo: CardInfo? = null
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemLayoutView = LayoutInflater.from(parent.context).inflate(
                 R.layout.card_view_organizar, parent, false)
-
 
 // create ViewHolder
         val viewHolder = ViewHolder(itemLayoutView)
@@ -33,17 +33,15 @@ class AdapterCardOrganizar(val context: Context, private val mNotificationListMo
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-
         if (mNotificationListModelArrayList != null) {
             holder.tvTitle.text = mNotificationListModelArrayList.get(position).title
             holder.tvDes.text = mNotificationListModelArrayList.get(position).description
             holder.swFav.isChecked = mNotificationListModelArrayList.get(position).priorite
-
         }
 
 //        var btn : Button? = null
 //        btn!!.setOnClickListener(View.OnClickListener {
-//            CardInfo(holder.tvTitle.text,)
+//
 //        })
 
         /**
@@ -74,22 +72,25 @@ class AdapterCardOrganizar(val context: Context, private val mNotificationListMo
         holder.itemView.setOnClickListener {
 
             var alertEdit = AlertDialog.Builder(context)
-            alertEdit.setView(R.layout.card_view_edited)
+            var inflater: View = LayoutInflater.from(context).inflate(R.layout.card_view_edited,null)
+
+
+            alertEdit.setView(inflater)
+
 
 
             //TEM QUE VERIFICAR SE TA INDO
-            val titulo = holder.itemView.findViewById<EditText>(R.id.edittitle)
-            val desc = holder.itemView.findViewById<EditText>(R.id.editdescription)
-            val priority = holder.itemView.findViewById<Switch>(R.id.favsw)
+            var titulo = inflater.findViewById<EditText>(R.id.edittitle)
+            var desc = inflater.findViewById<EditText>(R.id.editdescription)
+            var swfav = inflater.findViewById<Switch>(R.id.favsw)
 
             alertEdit.setTitle("Editar Tarefa")
             alertEdit.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
 
-                //ISSO AQUI TA ZUANDO TUDO MAS NAO TO CONSEGUINDO RESOLVER
-                holder.tvTitle.text = titulo.text.toString()
-                holder.tvDes.text = desc.text.toString()
-                holder.swFav.isChecked = priority.isChecked
-                //TEM QUE RESOLVER
+
+                this!!.addItem(CardInfo(titulo.text.toString(),desc.text.toString(),swfav.isChecked))
+                this!!.removeItem(position)
+
 
             })
 
