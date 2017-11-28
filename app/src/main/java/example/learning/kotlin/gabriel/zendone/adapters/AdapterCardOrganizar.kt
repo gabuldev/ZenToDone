@@ -16,7 +16,7 @@ import com.orhanobut.hawk.Hawk
 import example.learning.kotlin.gabriel.zendone.CardInfo
 import example.learning.kotlin.gabriel.zendone.R
 import java.util.*
-
+//a
 
 class AdapterCardOrganizar(val context: Context, private val mNotificationListModelArrayList: ArrayList<CardInfo>?) : RecyclerView.Adapter<AdapterCardOrganizar.ViewHolder>() {
 
